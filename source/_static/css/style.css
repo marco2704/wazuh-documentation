@@ -687,7 +687,6 @@ li.toctree-l5 > a {
 #navbar-globaltoc {
   visibility: visible;
   right: -20px;
-  overflow-y: scroll;
   transition: .3s all;
 }
 
@@ -1100,7 +1099,7 @@ footer a:focus,
 
 .search_main {
   position: absolute;
-  top: 8px;
+  top: 9px;
   right: 0;
   z-index: 4;
 }
@@ -1138,7 +1137,7 @@ footer a:focus,
 }
 
 .scrolled .search_main .searchform > .btn-search {
-	top: 2px;
+	top: 4px;
 }
 
 .search_main .btn-search:hover,
@@ -2727,14 +2726,6 @@ div.highlight pre {
 				align-items: center;
       }
 
-      #navbar-globaltoc {
-        overflow-y: hidden;
-      }
-
-      #navbar-globaltoc:hover {
-        overflow-y: auto;
-      }
-
 			#navbar-globaltoc.show, #navbar-globaltoc.collapsing {
 				right: -20px;
 				left: auto;
@@ -2747,6 +2738,11 @@ div.highlight pre {
 				position: sticky;
 			}
 
+			/* #navbar-globaltoc { */
+				/* position: sticky; */
+				/* top: -15px; */
+			/* } */
+
 			.scrolled #navbar-globaltoc.show, .scrolled #navbar-globaltoc.collapsing {
 				top: 50px;
 				position: -webkit-sticky;
@@ -2755,7 +2751,7 @@ div.highlight pre {
 
 			.scrolled #links-to-home .wazuh-logo-link {
 				position: fixed;
-				top: 1px;
+				top: 4px;
 			}
 
 			.scrolled .no-latest-docs #links-to-home .wazuh-logo-link {
@@ -2775,9 +2771,18 @@ div.highlight pre {
         font-size: 0.9rem;
       }
 
-      .release-selector-wrapper {
-        border-bottom: 3px solid transparent;
-      }
+			.blue-bar .search_main-container {
+				overflow: hidden;
+				width: 0;
+				opacity: 0;
+				transition: width 0.2s 0.2s, opacity 0.3s 0.2s;
+			}
+
+			.scrolled .blue-bar .search_main-container {
+				width: 720px;
+				opacity: 1;
+				transition: width 0.3s 0.2s, opacity 0.3s 0.2s;
+			}
 
 			#page::before {
 				height: 100px;
@@ -2786,7 +2791,7 @@ div.highlight pre {
 			.menu-sub .search_main {
 				max-width: 360px;
 				margin-left: 360px;
-				padding: 6px 30px;
+				padding: 6px 45px;
 			}
 
 			.menu-sub {
@@ -2812,7 +2817,7 @@ div.highlight pre {
 			}
 
 			.scrolled #page::before {
-				 top: -60px;
+				 top: -56px;
 			}
 
 			.scrolled #page.no-latest-docs::before {
@@ -2822,10 +2827,12 @@ div.highlight pre {
 			.version-zone.d-lg-flex {
 				justify-content: flex-end;
 				padding: 0 15px 8px;
+				margin-top: -4px;
 			}
 
 			.scrolled .version-zone.d-lg-flex {
 				padding: 8px 15px;
+				margin-top: 2px;
 			}
 
       #welcome-to-wazuh .topic p.topic-title + p{
@@ -2997,6 +3004,7 @@ div.highlight pre {
 				flex-wrap: nowrap;
 				position: relative;
 				z-index: 1;
+				height: auto;
 			}
 
 			#main-content {
@@ -3009,6 +3017,7 @@ div.highlight pre {
 
       #main-content.order-1 {
         padding-left: 45px;
+				height: auto;
       }
 
 			.central-page-area a img {
@@ -3057,11 +3066,8 @@ div.highlight pre {
       }
 
       nav.full-toctree-nav {
-        min-height: calc(100vh - 410px);
-				z-index: 3;
-        width: 360px;
-				position: static;
-        transition: width 0.3s;
+        height: auto;
+				width: 360px;
       }
 
       .full-toctree-nav.collapsed {
@@ -3075,27 +3081,11 @@ div.highlight pre {
       }
 
       .side-scroll {
-				position: -webkit-sticky;
-				position: sticky;
-				top: 50px;
-				overflow: hidden;
-				max-height: calc(100vh - 95px);
-				height: 100%;
         flex-direction: column;
-        padding-right: 15px;
         width: 375px;
       }
 
-			.scrolled .side-scroll {
-				top: 40px;
-				max-height: calc(100vh - 40px);
-			}
-
-      .side-scroll:hover{
-        overflow-y: auto;
-      }
-
-      .no-latest-docs .side-scroll {
+			.no-latest-docs .side-scroll {
         top: 80px;
 				max-height: calc(100vh - 140px);
       }
@@ -3112,7 +3102,6 @@ div.highlight pre {
       }
 
 			.scrolled #search-lg {
-				min-height: 0;
 				opacity: 0;
 				overflow: hidden;
 				transition: min-height 0.5s, opacity 0.3s;

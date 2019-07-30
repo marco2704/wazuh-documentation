@@ -6,7 +6,7 @@ jQuery(function($){
     */
 
 
-    var current_version = "3.9-new-design";
+    var current_version = "3.9-new-design-fullmenu";
 
     var versions = [
         {name: "3.9 (current)", url: "/"+current_version},

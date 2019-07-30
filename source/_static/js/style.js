@@ -315,8 +315,8 @@ $(function(){
 
   function searcbarToDesktop(){
     var searchbar = $('.search_main');
-    if (searchbar.closest('.blue-bar').length > 0 ){
-      // Search bar in .blue-bar .container: change to #search-lg
+    if (searchbar.closest('.search_main-container').length > 0 ){
+      // Search bar in .search_main-container .container: change to #search-lg
       searchbar.appendTo($('#search-lg'));
     }
   }
@@ -324,24 +324,24 @@ $(function(){
   function searcbarToMobile(){
     var searchbar = $('.search_main');
     if (searchbar.closest('#search-lg').length > 0 ){
-      // Search bar in #search-lg: change to .blue-bar .container:
-      searchbar.appendTo($('.blue-bar'));
+      // Search bar in #search-lg: change to .search_main-container .container:
+      searchbar.appendTo($('.search_main-container'));
     }
   }
 
 	function searcbarToVertical(){
     var searchbar = $('.search_main');
-    if (searchbar.closest('.blue-bar').length > 0 ){
-      // Search bar in .blue-bar .container: change to #search-lg
+    if (searchbar.closest('.search_main-container').length > 0 ){
+      // Search bar in .search_main-container .container: change to #search-lg
       searchbar.prependTo($('#search-lg'));
-    }
+		}
   }
 
   function searcbarToHorizontal(){
     var searchbar = $('.search_main');
     if (searchbar.closest('#search-lg').length > 0 ){
-      // Search bar in #search-lg: change to .blue-bar .container:
-      searchbar.prependTo($('.blue-bar'));
+      // Search bar in #search-lg: change to .search_main-container .container:
+      searchbar.prependTo($('.search_main-container'));
     }
   }
 
